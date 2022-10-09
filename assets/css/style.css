@@ -1,0 +1,575 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 
+    1. Từ ngoài vào trong 
+    2. Từ trên xuống
+    3. Từ tổng quan đến chi tiết
+*/
+
+/* 
+    1. Vị Trí
+    2. Kích Thước (Width , Height)
+    3. Màu Sắc
+    4. Kiểu Dáng (Kiểu chữ, hình tròn, hình vuông,...)
+*/
+
+
+
+/* CHUNG */
+.clear{
+    clear:both;             /*Cach 2: khac phuc dung float*/
+}
+
+.btn{   
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 12px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}  
+
+.text-center{
+    text-align: center !important;
+}
+
+.text-white{
+    color: white !important;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right:-8px;
+}
+
+.row::after{
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-half{
+    width: 50%;
+}
+
+.col-third{
+    width: 33.33333%;
+}
+
+.col-full{
+    width: 100%;
+}
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16{
+    margin-top: 16px !important;
+}
+
+.pull-right{
+    float: right !important;
+}
+
+/* RIENG */
+html{
+    font-family: "Lato", "Arial", sans-serif;
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+#header{
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/* HEADER */
+#nav{
+    display: inline-block ;
+}
+
+#nav, .subnav{
+    list-style: none;
+}
+
+#nav > li{
+    display: inline-block;
+}
+
+#nav li{
+    position: relative; 
+}
+
+#nav > li > a{
+    color: white;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: block;
+    
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav .subnav li:hover a,
+#nav > li:hover > a{
+    background-color: #ccc;
+    color: black;
+    cursor: pointer;
+}
+
+#nav .subnav{
+    display: none;  
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    min-width: 160px;
+}
+
+#nav .subnav a{
+    color: black;
+    padding: 8px 16px;
+    line-height: 22.5px;
+}
+
+#nav .nav-arrow-down{
+    font-size: 14px;
+}
+
+#header .bar-btn,
+#header .search-btn{
+    float: right;       /* Van de khi dung float: The cha se khong om toan bo duoc vi float no day ra 1 dong khac. Cach khac phuc them thuoc tinh Overflow: hidden */
+    padding: 12px 24px;
+}
+
+#header .bar-btn{
+    color: white;
+    display: none;
+}
+
+#header .bar-btn:hover{
+    background-color: #ccc;
+    color: black;
+}
+
+#header .search-icon{
+    color: white;
+    font-size: 14px;
+    line-height: 22.5px;
+}
+
+#header .search-btn:hover{
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+/* SLIDER */
+#slider{
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url("/assets/img/slider/la.jpg") top center / cover no-repeat;
+}
+
+#slider .text-content{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    color: white;
+    padding: 32px 16px;
+    text-align: center;
+}
+
+#slider .text-heading{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#slider .text-description{
+    margin-top: 25px;
+    font-weight: 700;
+}
+
+/* CONTENT CHUNG */
+#content .content-section{
+    padding: 64px 16px 112px;
+    width: 800px;
+    max-width: 100%;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+#content .section-heading{
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+#content .section-subheading{
+    margin-top: 25px;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.6;
+}
+
+/* THE BAND */
+#content .about-text{
+    text-align: justify;
+    margin: 25px 0px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
+
+/* overflow: hidden;              Cach khac phuc khi dung float */
+
+#content .member-name{
+    margin: 15px 0;
+}
+
+#content .member-avatar{
+    width: 154px;
+    border-radius: 4px;
+}
+
+/* TOUR DATES */
+#content .tour-section{
+    background-color: black;    /* O day kho' ma` doi mau` chu nen dung cach them class*/
+}
+
+#content .book-list{
+    background-color: white;
+    margin-top: 40px;
+}
+
+#content .tour-section li{
+    padding: 8px 16px;
+    list-style: none;
+    border: 1px solid #ddd;
+    color: #757575;
+}
+
+#content .status{
+    margin-left: 16px;
+    background-color: #f44336;
+    padding: 3px 8px;
+}
+
+#content .quantity{
+    float: right;
+    background-color: black;
+    margin-right: 16px;
+    padding: 3px 8px;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: -3px;
+}
+
+/* PLACES */
+.tour-section .places-list{
+    margin-top: 16px;
+}
+
+.tour-section .place-img{
+    width: 100%;
+    display: block;
+}
+
+.tour-section .place-img:hover{
+    opacity: 0.6;
+}
+
+.tour-section .place-content{
+    background-color: white;
+    padding: 16px;
+    font-size: 15px;
+}
+
+.tour-section .heading{
+    font-size: 15px;
+    
+}
+
+.tour-section .place-time{
+    margin-top: 15px;
+    color: #757575;
+}
+
+.tour-section .place-description{
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* CONTACT */
+.contact-content{
+    margin-top: 48px;
+}
+
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i{
+    width: 30px;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+
+.contact-form .form-control{
+    padding: 8px;
+    height: 40.5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.map-section img{
+    width: 100%;
+    filter: grayscale(50%);
+}
+
+/* Footer Section */
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list{
+    font-size: 24px;
+}
+
+#footer .social-list a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .copyright a,
+#footer .social-list a:hover{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .copyright{
+    font-size: 15px;
+    margin: 15px 0;
+    color: rgba(0, 0, 0, 0.6);
+
+}
+
+#footer .copyright a{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* MODAL */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal.open{
+    display: flex;
+}
+
+.modal-container{
+    background-color: white;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 300px;
+    position: relative;
+    animation: modalFadeIn ease 0.4s;
+}
+
+.modal-close-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modal-close-icon:hover{
+    opacity: 0.8;
+}
+
+.modal-header{
+    background-color: #009688;
+    font-size: 30px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: 4px;
+}
+
+.modal-header i{
+    margin-right: 16px;
+}
+
+.modal-body{
+    padding: 16px;
+}
+
+.modal-label{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-body input{
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+#pay-tickets{
+    background-color: #009688;
+    border: none;
+    width: 100%;
+    padding: 18px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#pay-tickets:hover{
+    opacity: 0.8;
+}
+
+.modal-footer{
+    padding: 16px;
+    text-align: right;
+}
+
+.modal-help a{
+    color: #2196f3;
+}
+
+@keyframes modalFadeIn{         /* animation cua modal*/
+    from{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}     
+
+@media only screen and (max-width: 39.9375em) {
+    /* CHUNGg */
+    .s-text-center{
+        text-align: center;
+    }
+
+    .s-full-width,
+    .s-col-full{
+        width: 100% !important;
+    }
+
+    .s-mt-8{
+        margin-top: 8px !important;
+    }
+    
+    /* RIENG */
+    #nav > li{
+    display: block;
+    }
+
+    #nav > li:first-child{
+        display: inline-block;
+    }
+
+    #nav{
+        display: block;
+    }
+
+    #nav .subnav{
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a{
+        color: white;
+        padding: 12px 36px;
+        
+    }
+
+    #header{
+        overflow: hidden;
+    }
+
+    #header .search-btn{
+        display: none;
+    }
+
+    #header .bar-btn{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    #slider .text-content{
+        display: none;
+    }
+
+    #content .members-list img{
+        width: 60%;
+    }
+
+    .contact-form{
+        margin-top: 16px;
+    }
+}
+
+
+
+
+
